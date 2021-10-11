@@ -5,13 +5,19 @@ const multer = require('multer')
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (
-      (file.mimetype == 'document/txt' || file.mimetype == 'document/pdf',
-      file.mimetype == 'document/ppt and PPTX')
+      file.mimetype == 'M4A' ||
+      file.mimetype == 'FLAC' ||
+      file.mimetype == 'MP3' ||
+      file.mimetype == ' WAV' ||
+      file.mimetype == 'MP4' ||
+      file.mimetype == 'WMA' ||
+      file.mimetype ||
+      'AAC'
     ) {
       cb(null, true)
     } else {
       cb(null, false)
-      return cb(new Error('Only .txt, pdf and ppt and pptx format allowed'))
+      return cb(new Error('Only Audio format allowed!'))
     }
     cb(null, __dirname + './../uploads') //you tell where to upload the files,
   },
