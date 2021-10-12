@@ -4,7 +4,7 @@ const multer = require('multer')
 
 // const fileController = require('./../controller/uploadFile')
 
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (
       file.mimetype == 'M4A' ||
@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
   },
 })
 
-const upload = multer({
+var upload = multer({
   storage: storage,
   onFileUploadStart: function (file) {
     console.log(file.originalname + ' is starting ...')
