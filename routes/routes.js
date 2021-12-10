@@ -13,6 +13,7 @@ var storage = multer.diskStorage({
       file.mimetype == ' WAV' ||
       file.mimetype == 'MP4' ||
       file.mimetype == 'WMA' ||
+      file.mimetype == 'JPG' ||
       file.mimetype ||
       'AAC'
     ) {

@@ -1,5 +1,5 @@
-// const express = require('express')
-// const router = express.Router()
+const express = require('express')
+const router = express.Router()
 const multer = require('multer')
 const constants = require('./../constants/constant')
 
@@ -34,12 +34,9 @@ const upload = multer({
   },
 })
 
-// router.post('/profile', upload.single('file'), function (req, res, next) {
-//   // req.file is the `avatar` file
-//   // req.body will hold the text fields, if there were any
-
-//   console.log('code here....')
-//   console.log(req.file)
-// })
+router.post('/profile', upload.single('file'), function (req, res, next) {
+  console.log('Do not worryNow i am here ------')
+  console.log(req.file)
+})
 
 module.exports = router

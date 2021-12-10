@@ -4,9 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const routes = require('./routes')
 require('dotenv').config()
-// process.env.PORT
-// console.log(process.env.PORT)
-
+const port = process.env.PORT
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -16,4 +14,4 @@ mongoose.connect(process.env.DATABASE_CONNECTION).then(() => {
   console.log('connect to DB')
 })
 
-app.listen(3000)
+app.listen(port, () => console.log(`server is listening at ${ port }`))
